@@ -5,75 +5,262 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Резюме — Жунисали Шанабек</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px auto;
-      max-width: 800px;
-      line-height: 1.6;
-      color: #333;
+    :root {
+      --bg: #f4f6f9;
+      --text: #333;
+      --card-bg: #fff;
+      --link: #2563eb;
     }
-    h1, h2 {
-      color: #222;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+
+    [data-theme="dark"] {
+      --bg: #111827;
+      --text: #e5e7eb;
+      --card-bg: #1f2937;
+      --link: #60a5fa;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    header p {
+      margin: 8px 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      border-left: 4px solid var(--link);
+      padding-left: 10px;
+      font-size: 1.4rem;
+      color: var(--link);
     }
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
     .job {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .job strong {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    ul {
+      padding-left: 20px;
     }
     .contact a {
-      color: #0066cc;
+      color: var(--link);
       text-decoration: none;
     }
     .contact a:hover {
       text-decoration: underline;
     }
+    /* Проекты */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--bg);
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .project-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .project-links a {
+      margin-right: 10px;
+      font-size: 0.9rem;
+      color: var(--link);
+      text-decoration: none;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Кнопка скачать */
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--link);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* Переключатель темы */
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--card-bg);
+      color: var(--text);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .theme-toggle:hover {
+      background: #374151;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
     <h1>Жунисали Шанабек</h1>
     <p class="contact">
-      📍 Казахстан<br>
-      📧 <a href="mailto:youremail@example.com">youremail@example.com</a><br>
-      💼 <a href="https://github.com/yourgithub">github.com/yourgithub</a><br>
-      🔗 <a href="https://linkedin.com/in/yourlinkedin">linkedin.com/in/yourlinkedin</a>
+      📍 Казахстан | 
+      📧 <a href="mailto:youremail@example.com">youremail@example.com</a> | 
+      💼 <a href="https://github.com/yourgithub">GitHub</a> | 
+      🔗 <a href="https://linkedin.com/in/yourlinkedin">LinkedIn</a>
     </p>
+    <a class="download-btn" href="resume.pdf" download>⬇ Скачать PDF</a>
   </header>
 
-  <section class="section">
-    <h2>Обо мне</h2>
-    <p>Senior Backend Developer с 5-летним опытом разработки на Python (FastAPI, Django). Опыт построения микросервисной архитектуры, интеграций с внешними сервисами и оптимизации баз данных.</p>
-  </section>
+  <div class="container">
+    <section class="section">
+      <h2>Обо мне</h2>
+      <p>Senior Backend Developer с 5-летним опытом на Python (FastAPI, Django). Строю микросервисные архитектуры, оптимизирую базы данных, настраиваю CI/CD и деплой в Kubernetes.</p>
+    </section>
 
-  <section class="section">
-    <h2>Опыт работы</h2>
-    <div class="job">
-      <strong>Senior Software Engineer</strong> — Компания X (2020–2024)<br>
-      Разработка backend-сервисов, интеграции, работа с PostgreSQL и MongoDB, деплой в Kubernetes.
-    </div>
-    <div class="job">
-      <strong>Backend Developer</strong> — Компания Y (2018–2020)<br>
-      Создание REST API, внедрение Celery + RabbitMQ, оптимизация запросов.
-    </div>
-  </section>
+    <section class="section">
+      <h2>Опыт работы</h2>
+      <div class="job">
+        <strong>Senior Software Engineer</strong> — Компания X (2020–2024)<br>
+        Разработка backend-сервисов, интеграция с внешними API, проектирование БД, деплой в Kubernetes.
+      </div>
+      <div class="job">
+        <strong>Backend Developer</strong> — Компания Y (2018–2020)<br>
+        Создание REST API, внедрение Celery + RabbitMQ, оптимизация запросов PostgreSQL.
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Навыки</h2>
-    <ul>
-      <li>Python, FastAPI, Django</li>
-      <li>PostgreSQL, MongoDB</li>
-      <li>Docker, Kubernetes</li>
-      <li>RabbitMQ, Celery</li>
-      <li>GitHub Actions, CI/CD</li>
-    </ul>
-  </section>
+    <section class="section">
+      <h2>Навыки</h2>
+      <ul>
+        <li>Python, FastAPI, Django</li>
+        <li>PostgreSQL, MongoDB</li>
+        <li>Docker, Kubernetes</li>
+        <li>RabbitMQ, Celery</li>
+        <li>CI/CD, GitHub Actions</li>
+      </ul>
+    </section>
 
-  <section class="section">
-    <h2>Образование</h2>
-    <p>Бакалавр компьютерных наук — Университет Z (2014–2018)</p>
-  </section>
+    <section class="section">
+      <h2>Проекты</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>🚚 Logistics API</h3>
+          <p>FastAPI + PostgreSQL сервис для управления заказами и перевозками.</p>
+          <div class="project-links">
+            <a href="https://github.com/yourgithub/logistics-api">GitHub</a>
+            <a href="#">Demo</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>💳 Payment Service</h3>
+          <p>Сервис валютных переводов с комиссиями. AsyncIO + RabbitMQ.</p>
+          <div class="project-links">
+            <a href="https://github.com/yourgithub/payment-service">GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>📋 To-Do App</h3>
+          <p>Приложение для задач (FastAPI + MongoDB). Поддержка JWT авторизации.</p>
+          <div class="project-links">
+            <a href="https://github.com/yourgithub/todo-app">GitHub</a>
+            <a href="#">Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Образование</h2>
+      <p>Бакалавр компьютерных наук — Университет Z (2014–2018)</p>
+    </section>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    // Загружаем тему из localStorage или по системным настройкам
+    if (localStorage.getItem("theme")) {
+      document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+      toggleBtn.textContent = localStorage.getItem("theme") === "dark" ? "☀️" : "🌙";
+    } else {
+      if (prefersDark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        toggleBtn.textContent = "☀️";
+      }
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      let currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "🌙";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "☀️";
+      }
+    });
+  </script>
 </body>
 </html>
