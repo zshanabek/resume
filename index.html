@@ -1,190 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVGMGW7CEZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WVGMGW7CEZ');
+  </script>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
   <title>Резюме — Жунисали Шанабек</title>
-  <style>
-    :root {
-      --bg: #f4f6f9;
-      --text: #333;
-      --card-bg: #fff;
-      --link: #2563eb;
-    }
 
-    [data-theme="dark"] {
-      --bg: #111827;
-      --text: #e5e7eb;
-      --card-bg: #1f2937;
-      --link: #60a5fa;
-    }
+  <meta property="og:title" content="Жунисали Шанабек — Резюме" />
+  <meta property="og:description" content="Жунисали Шанабек — Резюме" />
+  <meta property="og:url" content="https://zshanabek.github.io/resume/" />
+  <meta property="og:type" content="website" />
 
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-    header {
-      background: #1f2937;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      margin: 8px 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-top: 0;
-      border-left: 4px solid var(--link);
-      padding-left: 10px;
-      font-size: 1.4rem;
-      color: var(--link);
-    }
-    .section {
-      margin-bottom: 35px;
-    }
-    .job {
-      margin-bottom: 20px;
-    }
-    .job strong {
-      font-size: 1.1rem;
-      color: var(--text);
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .contact a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    /* Проекты */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: var(--bg);
-      border: 1px solid #374151;
-      border-radius: 8px;
-      padding: 15px;
-      transition: transform 0.2s;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .project-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.1rem;
-      color: var(--text);
-    }
-    .project-card p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-    .project-links a {
-      margin-right: 10px;
-      font-size: 0.9rem;
-      color: var(--link);
-      text-decoration: none;
-    }
-    .project-links a:hover {
-      text-decoration: underline;
-    }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Жунисали Шанабек — Резюме" />
+  <meta name="twitter:description" content="Жунисали Шанабек — Резюме" />
+  <link rel="stylesheet" href="css/style.css">
 
-    /* Кнопка скачать */
-    .download-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: var(--link);
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .download-btn:hover {
-      background: #1d4ed8;
-    }
-
-    /* Переключатель темы */
-    .theme-toggle {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: var(--card-bg);
-      color: var(--text);
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .theme-toggle:hover {
-      background: #374151;
-      color: #fff;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 15px;
-      }
-      header h1 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
 </head>
+
 <body>
   <header>
     <button class="theme-toggle" id="themeToggle">🌙</button>
     <h1>Жунисали Шанабек</h1>
     <p class="contact">
-      📍 Казахстан | 
-      📧 <a href="mailto:youremail@example.com">youremail@example.com</a> | 
-      💼 <a href="https://github.com/yourgithub">GitHub</a> | 
-      🔗 <a href="https://linkedin.com/in/yourlinkedin">LinkedIn</a>
+      📍 Казахстан |
+      📧 <a href="mailto:zshanabek@gmail.com">zshanabek@gmail.com</a> |
+      💼 <a href="https://github.com/zshanabek">GitHub</a> |
+      🔗 <a href="https://linkedin.com/in/zshanabek">LinkedIn</a>
     </p>
-    <a class="download-btn" href="resume.pdf" download>⬇ Скачать PDF</a>
+    <a class="download-btn" href="assets/resume.pdf" download>⬇ Скачать PDF</a>
   </header>
 
   <div class="container">
     <section class="section">
       <h2>Обо мне</h2>
-      <p>Senior Backend Developer с 5-летним опытом на Python (FastAPI, Django). Строю микросервисные архитектуры, оптимизирую базы данных, настраиваю CI/CD и деплой в Kubernetes.</p>
+      <p>Senior Backend Developer с 5-летним опытом на Python (FastAPI, Django). Строю микросервисные архитектуры,
+        оптимизирую базы данных, настраиваю CI/CD и деплой в Kubernetes.</p>
     </section>
 
     <section class="section">
       <h2>Опыт работы</h2>
       <div class="job">
-        <strong>Senior Software Engineer</strong> — Компания X (2020–2024)<br>
+        <strong>Senior Software Engineer</strong> — Компания Arcana Inc. (2023–2025)<br>
         Разработка backend-сервисов, интеграция с внешними API, проектирование БД, деплой в Kubernetes.
+        <ul>
+          <li>Разработка сервисов с помощью FastAPI, Django в сфере GovTech и FinTech. <a href="https://fcbplatform.kz">fcblplatform.kz</a></li>
+          <li>Был тимлидом в проекте https://fcbplatform.kz. Команда состояла из 5 разработчиков → повысил качество кода и ускорил внедрение новых функций.</li>
+          <li>Подключил 25 госуслуг. Автоматизировал процесс подключения одной госуслуги, сократив время с 8 часов до 5 минут </li>
+          <li>Спроектировал архитектуру распределённых сервисов (RabbitMQ + Celery) → увеличил стабильность обработки задач при росте нагрузки.</li>
+        </ul>
       </div>
+
       <div class="job">
-        <strong>Backend Developer</strong> — Компания Y (2018–2020)<br>
-        Создание REST API, внедрение Celery + RabbitMQ, оптимизация запросов PostgreSQL.
+        <strong>Backend Developer</strong> — Компания Vention (2021–2023)<br>
+        <ul>
+          <li>Разработка REST API с использованием фреймворков Flask, FastAPI</li>
+          <li>Использовал AWS сервисы в проектах: Lambda, Amplify, S3, SQS</li>
+          </li>
+          <li>Участвовал в миграции с монолита на микросервисную архитектуру → снизил количество критических отказов в продакшене на 30%.</li>
+          <li>Написал тесты и провёл рефакторинг legacy-кода → уменьшил баги в продакшене на 25%.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <strong>Backend Developer</strong> — theflow.kz (2020–2021)<br>
+        The Flow - Образовательная платформа с курсами в области маркетинга.
+        В сфере маркетинга не хватает специалистов по SMM, таргетингу и копирайтингу. The Flow решает эту проблему, предоставляя полезные видеоуроки. Команда контент-мейкеров загрузила множество видео. Каждое видео рассказывает о том, как стать профессиональным маркетологом. Студенты могут подписаться на ежедневные домашние задания и тесты, что помогает им совершенствовать свои знания и контролировать прогресс.
+        <ul>
+          <li>Разработал бэкенд на Python и Django Rest Framework</li>
+          <li>Разработка фронтенда на Javascript и Vue.js</li>
+          <li>Реализовал механизм кэширования изображений со сторонних сервисов</li>
+          <li>Интеграция с платёжным шлюзом CloudPayments</li>
+          <li>Реализовал подхода к хранению пользовательских ресурсов</li>
+          <li>Представил и внедрил процесы CI/CD</li>
+          <li>Был ответственен за найм новых разработчиков: собеседования, онбординг</li>
+        </ul>
       </div>
     </section>
 
@@ -203,26 +104,32 @@
       <h2>Проекты</h2>
       <div class="projects">
         <div class="project-card">
-          <h3>🚚 Logistics API</h3>
-          <p>FastAPI + PostgreSQL сервис для управления заказами и перевозками.</p>
+          <h3>🚀 667 Jumys Iste</h3>
+          <p>Google Chrome Расширение для продуктивности</p>
           <div class="project-links">
-            <a href="https://github.com/yourgithub/logistics-api">GitHub</a>
-            <a href="#">Demo</a>
+            <a href="https://github.com/zshanabek/667-jumys-iste">GitHub</a>
+            <a href="https://chromewebstore.google.com/detail/lhfhnmlpeoifpbiemjpndnoonhfanoho?utm_source=item-share-cb">Chrome Web Store</a>
           </div>
         </div>
         <div class="project-card">
           <h3>💳 Payment Service</h3>
           <p>Сервис валютных переводов с комиссиями. AsyncIO + RabbitMQ.</p>
           <div class="project-links">
-            <a href="https://github.com/yourgithub/payment-service">GitHub</a>
+            <a href="https://github.com/zshanabek/currency-transfer-service">GitHub</a>
           </div>
         </div>
         <div class="project-card">
           <h3>📋 To-Do App</h3>
-          <p>Приложение для задач (FastAPI + MongoDB). Поддержка JWT авторизации.</p>
+          <p>Приложение для задач (FastAPI + Vue.js)</p>
           <div class="project-links">
-            <a href="https://github.com/yourgithub/todo-app">GitHub</a>
-            <a href="#">Live Demo</a>
+            <a href="https://github.com/zshanabek/todo-app">GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>🔗 URL Shortener</h3>
+          <p>Приложение для сокращения URL. Stack: MEVN (MongoDB, Express, Vue.js, Node.js)</p>
+          <div class="project-links">
+            <a href="https://github.com/zshanabek/quttai">GitHub</a>
           </div>
         </div>
       </div>
@@ -230,37 +137,15 @@
 
     <section class="section">
       <h2>Образование</h2>
-      <p>Бакалавр компьютерных наук — Университет Z (2014–2018)</p>
+      <p>Бакалавр компьютерных наук — Suleyman Demirel University (2015–2019)</p>
+    </section>
+    <section class="section">
+      <h2>Дополнительное образование</h2>
+      <p>Team Lead Fundamentals (2023)</p>
     </section>
   </div>
 
-  <script>
-    const toggleBtn = document.getElementById("themeToggle");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    // Загружаем тему из localStorage или по системным настройкам
-    if (localStorage.getItem("theme")) {
-      document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
-      toggleBtn.textContent = localStorage.getItem("theme") === "dark" ? "☀️" : "🌙";
-    } else {
-      if (prefersDark) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        toggleBtn.textContent = "☀️";
-      }
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      let currentTheme = document.documentElement.getAttribute("data-theme");
-      if (currentTheme === "dark") {
-        document.documentElement.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-        toggleBtn.textContent = "🌙";
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        toggleBtn.textContent = "☀️";
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
